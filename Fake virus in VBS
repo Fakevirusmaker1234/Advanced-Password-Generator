@@ -1,0 +1,28 @@
+Dim message, sapi
+message = "Your computer has been infected with a virus!"
+Set sapi = CreateObject("sapi.spvoice")
+sapi.Speak message
+
+Dim x
+For x = 1 To 5
+    MsgBox "Your computer is infected! Virus count: " & x, 48, "Virus Alert"
+Next
+
+sapi.Speak "Attempting to delete system files..."
+For x = 1 To 5
+    MsgBox "Deleting system files... " & x & "% complete", 16, "System Alert"
+Next
+
+sapi.Speak "Error! Unable to delete system files."
+MsgBox "Error! Unable to delete system files.", 16, "System Error"
+
+sapi.Speak "Attempting to repair system..."
+For x = 1 To 5
+    MsgBox "Repairing system... " & x & "% complete", 16, "System Repair"
+Next
+
+sapi.Speak "Repair failed. Your computer is now locked."
+MsgBox "Repair failed. Your computer is now locked.", 16, "System Lock"
+
+sapi.Speak "Just kidding! This is a fake virus."
+MsgBox "Just kidding! This is a fake virus.", 64, "Fake Virus"
